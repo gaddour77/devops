@@ -1,7 +1,6 @@
 package tn.esprit.tpfoyer.service;
 
 
-import static org.junit.jupiter.api.Assertions.*;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
@@ -12,10 +11,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.data.domain.Example;
 import tn.esprit.tpfoyer.entity.Chambre;
 import tn.esprit.tpfoyer.repository.ChambreRepository;
-import tn.esprit.tpfoyer.service.ChambreServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,16 +54,12 @@ public class ChambreServiceImplTest {
     void testAddChambre() {
         Chambre chambresaved = Chambre.builder().idChambre(1L).numeroChambre(150).build();
 
-        // Mock the repository behavior
         Mockito.when(chambreRepository.save(Mockito.any(Chambre.class))).thenReturn(chambresaved);
-        // Call the service method
         Chambre chambre1 = chambreService.addChambre(chambre);
-        // Assertions
         Assertions.assertNotNull(chambre1);
         Assertions.assertEquals(1L, chambre1.getIdChambre());
 
 
-        // Verify that the repository method was called
         Mockito.verify(chambreRepository).save(chambre);
         System.out.println("Chambre saved: " + chambre1);
     }
