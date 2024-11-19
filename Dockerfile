@@ -3,7 +3,7 @@ LABEL authors="GADOUR"
 
 ENTRYPOINT ["top", "-b"]
 # Use the OpenJDK 11 image from DockerHub
-FROM openjdk:11-jdk
+FROM openjdk:17-jdk
 
 # Expose the port your Spring Boot application will run on
 EXPOSE 8089
