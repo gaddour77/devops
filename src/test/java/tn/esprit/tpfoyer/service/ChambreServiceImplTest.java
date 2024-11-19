@@ -1,8 +1,7 @@
-package tn.esprit.tpfoyer;
+package tn.esprit.tpfoyer.service;
 
 
 
-import static org.junit.jupiter.api.Assertions.*;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
@@ -13,10 +12,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.data.domain.Example;
 import tn.esprit.tpfoyer.entity.Chambre;
 import tn.esprit.tpfoyer.repository.ChambreRepository;
-import tn.esprit.tpfoyer.service.ChambreServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +22,7 @@ import java.util.Optional;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ExtendWith(MockitoExtension.class)
 @RequiredArgsConstructor
-public class ChambreServiceImplTest {
+class ChambreServiceImplTest {
     @Mock
     ChambreRepository chambreRepository;
     @InjectMocks
